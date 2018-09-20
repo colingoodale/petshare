@@ -2,11 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
-    res.render("login");
-  });
-
-  app.get("/sign-up", function (req, res) {
-    res.render("user-info");
+    res.render("index");
   });
 
   app.post("/sign-up", function (req, res) {
