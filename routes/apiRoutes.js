@@ -20,3 +20,8 @@ module.exports = function (app) {
     });
   });
 };
+
+// stripe payment API test - example request
+stripe.charges.retrieve("ch_1DCWlH2eZvKYlo2CXLJZ7CMk", {
+  api_key: "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+});
