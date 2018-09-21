@@ -10,5 +10,12 @@ module.exports = function (sequelize, DataTypes) {
         walk_sub: DataTypes.INTEGER,
         sit_sub: DataTypes.INTEGER
     });
+    Subs.associate = function (models) {
+        Subs.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Subs;
 };
