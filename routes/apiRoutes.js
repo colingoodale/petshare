@@ -21,6 +21,12 @@ module.exports = function (app) {
   });
 };
 
+app.post("api/users", function (req, res) {
+  db.User.create(req.body)
+    .then(function (dbUser) {
+      res.json(dbUser);
+    });
+
 app.post("/sign-up", function (req, res) {
   db.User.create({
     email: DataTypes.STRING,
@@ -37,6 +43,7 @@ app.post("/sign-up", function (req, res) {
   }).then(function () {
     res.render("services");
   });
+
 });
 // stripe payment API test - example request
 // stripe.charges.retrieve("ch_1DCWlH2eZvKYlo2CXLJZ7CMk", {
