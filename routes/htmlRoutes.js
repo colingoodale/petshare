@@ -1,30 +1,23 @@
-var db = require("../models");
+var path = require("path");
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index");
   });
 
-  app.post("/sign-up", function (req, res) {
-    db.User.create({
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
-      first_name: DataTypes.STRING,
-      last_name: DataTypes.STRING,
-      home_address_1: DataTypes.STRING,
-      home_address_2: DataTypes.STRING,
-      home_city: DataTypes.STRING,
-      home_state: DataTypes.STRING,
-      home_zipcode: DataTypes.STRING,
-      credit_numb: DataTypes.STRING,
-      pet_name: DataTypes.STRING
-    }).then(function () {
-      res.render("services");
-    });
+  app.get("/login", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
+  app.get("/sign-up", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/sign-up.html"));
+  });
+
+  app.get("/service", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/service.html"));
+  });
+
+  app.get("/404", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/404.html"));
   });
 };
