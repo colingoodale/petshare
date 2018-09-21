@@ -1,4 +1,4 @@
-var db = require("../models");
+const db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
@@ -20,30 +20,21 @@ module.exports = function (app) {
     });
   });
 
-
-  app.post("api/users", function (req, res) {
-    db.User.create(req.body)
-      .then(function (dbUser) {
-        res.json(dbUser);
+  app.post("/api/sign-up", function (req, res) {
+    db.User.create({
+      user_email: req.body.user_email,
+      user_password: req.body.user_password,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      home_address_1: req.body.home_address_1,
+      home_address_2: req.body.home_address_2,
+      home_city: req.body.home_city,
+      home_state: req.body.home_state,
+      home_zipcode: req.body.home_zipcode,
+      credit_numb: req.body.credit_numb,
+    })
+      .then(function () {
+        res.json({ "msg": "Your user info is saved" });
       });
-
-    app.post("/sign-up", function (req, res) {
-      db.User.create({
-        email: DataTypes.STRING,
-        password: DataTypes.STRING,
-        first_name: DataTypes.STRING,
-        last_name: DataTypes.STRING,
-        home_address_1: DataTypes.STRING,
-        home_address_2: DataTypes.STRING,
-        home_city: DataTypes.STRING,
-        home_state: DataTypes.STRING,
-        home_zipcode: DataTypes.STRING,
-        credit_numb: DataTypes.STRING,
-        pet_name: DataTypes.STRING
-      }).then(function () {
-        res.render("services");
-      });
-
-    });
-
-  };
+  });
+};
