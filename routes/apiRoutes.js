@@ -37,4 +37,8 @@ module.exports = function (app) {
         res.json({ "msg": "Your user info is saved" });
       });
   });
+
+  app.post("/api/pets", function (req, res) {
+
+  })
 };

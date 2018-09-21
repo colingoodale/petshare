@@ -11,5 +11,15 @@ module.exports = function (sequelize, DataTypes) {
     home_zipcode: DataTypes.STRING,
     credit_numb: DataTypes.STRING
   });
+  User.associate = function (models) {
+    User.hasMany(models.Pets, {
+      onDelete: "cascade"
+    });
+  };
+  User.associate = function (models) {
+    User.hasMany(models.Subs, {
+      onDelete: "cascade"
+    });
+  };
   return User;
 };

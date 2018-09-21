@@ -6,5 +6,12 @@ module.exports = function (sequelize, DataTypes) {
         pet_picture_url: DataTypes.STRING,
         service_animal: DataTypes.BOOLEAN
     });
+    Pets.associate = function (models) {
+        Pets.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Pets;
 };
