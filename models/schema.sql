@@ -28,8 +28,6 @@ create table users
     (255) NOT NULL,
     credit_numb int
     (12) NOT NULL,
-    pet_name varchar
-    (255),
     pet_id int
     (10),
     sub_id int
