@@ -1,9 +1,10 @@
 require("dotenv").config();
-var express = require("express");
-var bodyParser = require("body-parser");
-var db = require("./models");
-var app = express();
-var PORT = process.env.PORT || 3000;
+const express = require("express");
+const bodyParser = require("body-parser");
+const db = require("./models");
+const stripe = require("stripe");
+const app = express();
+const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));

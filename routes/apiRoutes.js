@@ -20,7 +20,6 @@ module.exports = function (app) {
     });
   });
 
-
   app.post("/api/sign-up", function (req, res) {
     db.User.create({
       user_email: req.body.user_email,
@@ -38,8 +37,4 @@ module.exports = function (app) {
         res.json({ "msg": "Your user info is saved" });
       });
   });
-  // stripe payment API test - example request
-  // stripe.charges.retrieve("ch_1DCWlH2eZvKYlo2CXLJZ7CMk", {
-  //   api_key: "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
-  // });
 };
