@@ -1,7 +1,6 @@
 {
   "name": "petshare",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -36,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/colingoodale/petshare/issues"
   },
-  "homepage": "https://github.com/colingoodale/petshare#readme"
+  "homepage": "https://github.com/colingoodale/petshare#readme",
+  "description": ""
 }
