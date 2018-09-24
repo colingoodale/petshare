@@ -23,4 +23,7 @@ module.exports = function (app) {
   app.get("/petsignup", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/pets.html"))
   })
+  app.get("/subs", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/services.html"))
+  })
 };

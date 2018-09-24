@@ -39,8 +39,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/petsignup", function (req, res) {
-    console.log("hit route");
-    console.log(req.body);
     db.Pets.create({
       pet_name: req.body.pet_name,
       pet_type: req.body.pet_type,
@@ -56,6 +54,19 @@ module.exports = function (app) {
       });
   });
 
+  app.post("/api/subs", function m(req, res) {
+    db.Subs.create({
+      food_sub: req.body.food_sub,
+      groom_sub: req.body.groom_sub,
+      walk_sub: req.body.walk_sub,
+      sit_sub: req.body.sit_sub
+    })
+      .then(function () {
+        res.json({ "msg": "Saved Subscription Info" })
+      }).catch(function (err) {
+        console.log(err);
+      });
+  });
 
 
 };
