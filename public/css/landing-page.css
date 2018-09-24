@@ -11,7 +11,28 @@ h6 {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
+#buttonDiv {
+  position: fixed;
+  width:200px;
+  height:200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  border-bottom-width:1px;
+  border-top-width:1px;
+  border-right-width:1px;
+  border-left-width:1px;
+  border-style:solid;
+  border-color:#000000;
+  text-align:center;
+}
 
+button {
+position:relative;
+top: 50%;
+transform: translateY(-50%);
+}
 header.masthead {
   position: relative;
   background-color: #343a40;
