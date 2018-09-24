@@ -3,7 +3,6 @@ $(document).ready(function () {
     function insertAnotherPet(event) {
         event.preventDefault();
 
-        alert("hi");
         var petInfo = {
             pet_name: $("#pet-name").val().trim(),
             pet_type: $("#pet-type").val().trim(),
@@ -15,7 +14,7 @@ $(document).ready(function () {
         console.log(petInfo)
         $.post("/api/petsignup", petInfo);
         alert("You've signed up your pet! We'll send you to sign up another or to services if you only chose 1. Almost there!");
-        window.location.href = "/services"
+        window.location.href = "/petsignup"
     }
 
 
@@ -31,7 +30,7 @@ $(document).ready(function () {
         console.log(petInfo);
         $.post("/api/petsignup", petInfo);
         alert("You've signed up your pet! We'll send you to sign up another or to services if you only chose 1. Almost there!");
-        window.location.href = "/petsignup"
+        window.location.href = "/subs"
     }
     // $(document).on("click", "#submit", insterNewPet);
     $(document).on("click", "#morePets", insertAnotherPet);
