@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log("test");
     function insertNewUser() {
         event.preventDefault();
         var userInfo = {
@@ -16,8 +15,9 @@ $(document).ready(function () {
         }
 
         $.post("/api/sign-up", userInfo);
+        alert("You've been signed up!");
+        window.location.href = "/petsignup";
     }
 
     $(document).on("click", "#submit", insertNewUser);
-
 });
