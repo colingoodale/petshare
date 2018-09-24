@@ -41,4 +41,16 @@ module.exports = function (app) {
   app.post("/api/pets", function (req, res) {
 
   })
+  app.post("/api/petsignup", function (req, res) {
+    db.Pets.create({
+      pet_name: req.body.pet_name,
+      pet_type: req.body.pet_type,
+      pet_breed: req.body.pet_breed,
+      pet_picture_url: req.body.pet_picture,
+      service_animal: req.body.service
+    })
+  })
+
+
+
 };
