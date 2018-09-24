@@ -9,6 +9,7 @@ module.exports = function (sequelize, DataTypes) {
     Pets.associate = function (models) {
         Pets.belongsTo(models.User, {
             foreignKey: {
+                name: 'id',
                 allowNull: false
             }
         });
