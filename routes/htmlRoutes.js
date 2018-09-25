@@ -4,7 +4,9 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index");
   });
-
+  app.get("/checkout", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/checkout.html"));
+  });
   app.get("/login", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -22,8 +24,15 @@ module.exports = function (app) {
   });
   app.get("/petsignup", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/pets.html"))
+<<<<<<< Updated upstream
   })
   app.get("/subs", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/services.html"))
   })
+=======
+  });
+  app.post("/thanks", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/TYpage.html"));
+  });
+>>>>>>> Stashed changes
 };
