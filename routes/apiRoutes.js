@@ -6,7 +6,6 @@ module.exports = function (app) {
     res.json("user-info");
   });
 
-
   app.post("/api/sign-up", function (req, res) {
     db.User.create({
       user_email: req.body.user_email,
