@@ -1,13 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const db = require("./models");
 const stripe = require("stripe");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
 require("./routes/apiRoutes")(app);

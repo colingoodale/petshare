@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
         $.post("/api/subs", subInfo);
         alert("You've chosen subscriptions!");
-        window.location.href = "/"
+        window.location.href = "/TYpage.html"
     }
     $(document).on("click", "#submit", claimSubscriptions);
 });
