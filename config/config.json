@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "c6rcbue8pxtv5f38",
-    "password": "z63nht2s5y5xujkp",
-    "database": "fyuyctvu9l1i4ifa",
-    "host": "tyduzbv3ggpf15sx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "root",
+    "database": "pets_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "c6rcbue8pxtv5f38",
-    "password": "z63nht2s5y5xujkp",
-    "database": "fyuyctvu9l1i4ifa",
-    "host": "tyduzbv3ggpf15sx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "root",
+    "database": "pets_db",
+    "host": "localhost",
     "dialect": "mysql",
     "logging": false
   },
