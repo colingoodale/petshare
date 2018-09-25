@@ -20,7 +20,7 @@ module.exports = function (app) {
       credit_numb: req.body.credit_numb,
     })
       .then(function () {
-        res.json({ "msg": "Your user info is saved" });
+        res.redirect("/petsignup");
       });
   });
 

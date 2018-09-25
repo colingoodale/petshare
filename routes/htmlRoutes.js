@@ -2,31 +2,31 @@ var path = require("path");
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
-    res.render("../index.html");
+    res.sendFile(path.join(__dirname, "/index"));
   });
 
   app.get("/login", function (req, res) {
-    res.sendFile(path.join(__dirname, "../login.html"));
+    res.sendFile(path.join(__dirname, "/login"));
   });
 
   app.get("/sign-up", function (req, res) {
-    res.sendFile(path.join(__dirname, "../sign-up.html"));
+    res.sendFile(path.join(__dirname, "/sign-up"));
   });
 
   app.get("/service", function (req, res) {
-    res.sendFile(path.join(__dirname, "../service"));
+    res.sendFile(path.join(__dirname, "../public/service.html"));
   });
 
   app.get("/404", function (req, res) {
-    res.sendFile(path.join(__dirname, "../404"));
+    res.sendFile(path.join(__dirname, "/404"));
   });
   app.get("/petsignup", function (req, res) {
-    res.sendFile(path.join(__dirname, "../pets"))
+    res.sendFile(path.join(__dirname, "../public/pets.html"))
   })
   app.get("/subs", function (req, res) {
-    res.sendFile(path.join(__dirname, "../services"))
+    res.sendFile(path.join(__dirname, "../public/services.html"))
   })
   app.get("/thankyou", function (req, res) {
-    res.sendFile(path.join(__dirname, "../TYpage"))
+    res.sendFile(path.join(__dirname, "../public/TYpage.html"))
   })
 };
